@@ -20,7 +20,10 @@ while True:
         cabecalho('Opção 2')
         nome = str(input('Digite o Nome da pessoa: '))
         idade = leiaInt('Digite sua idade: ')
-        cadastrar(arq, nome, idade)
+        if idade > 80:
+            print("Idade invalida, tente novamente.")
+        else:
+            cadastrar(arq, nome, idade)
     elif resposta == 3:
         cabecalho('\033[36mSaindo do sistema, até mais.\033[m')
         break
