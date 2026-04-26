@@ -2,7 +2,7 @@ from lib.interface import *
 from lib.interface.ferramentas import *
 from lib import * 
 from time import sleep
-arq = 'CursoEmVideo.txt'
+arq = 'pessoas.txt'
 
 if arquivoExiste(arq):
     print('Arquivo encontrado com Sucesso!')
@@ -18,10 +18,12 @@ while True:
         verPessoasCadastradas(arq)
     elif resposta == 2:
         cabecalho('Opção 2')
-        nome = str(input('Digite o Nome da pessoa: '))
+        nome = str(input('Digite o Nome da pessoa:')).strip()
         idade = leiaInt('Digite sua idade: ')
         if idade > 80:
             print("Idade invalida, tente novamente.")
+        elif nome == "":
+            print("Nome invalido, digite seu nome real.")
         else:
             cadastrar(arq, nome, idade)
     elif resposta == 3:
